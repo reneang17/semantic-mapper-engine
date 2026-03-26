@@ -1,0 +1,96 @@
+{
+  "state_hash": "root_mozilla123",
+  "depth": 0,
+  "url": "https://mozilla.github.io/form-fill-examples/basic.html",
+  "elements": [
+    {
+      "intent": "fill_name",
+      "selector": "input[autocomplete='name']",
+      "action_type": "type",
+      "semantic_label": "Name Input Field",
+      "is_navigation": false,
+      "interaction_steps": "Select input boundary and keystroke exact name string block."
+    },
+    {
+      "intent": "fill_organization",
+      "selector": "input[autocomplete='organization']",
+      "action_type": "type",
+      "semantic_label": "Organization Input Field",
+      "is_navigation": false,
+      "interaction_steps": "Select input boundary and keystroke organization entity."
+    },
+    {
+      "intent": "fill_street_address",
+      "selector": "input[autocomplete='street-address']",
+      "action_type": "type",
+      "semantic_label": "Street Address Input Field",
+      "is_navigation": false,
+      "interaction_steps": "Select input boundary and keystroke street address."
+    },
+    {
+      "intent": "fill_address_level_2",
+      "selector": "input[autocomplete='address-level2']",
+      "action_type": "type",
+      "semantic_label": "City / Address Level 2 Input Field",
+      "is_navigation": false,
+      "interaction_steps": "Select input boundary and keystroke city definition."
+    },
+    {
+      "intent": "fill_address_level_1",
+      "selector": "input[autocomplete='address-level1']",
+      "action_type": "type",
+      "semantic_label": "State / Address Level 1 Input Field",
+      "is_navigation": false,
+      "interaction_steps": "Select input boundary and keystroke state definition."
+    },
+    {
+      "intent": "fill_postal_code",
+      "selector": "input[autocomplete='postal-code']",
+      "action_type": "type",
+      "semantic_label": "Postal Code Input Field",
+      "is_navigation": false,
+      "interaction_steps": "Select input boundary and keystroke ZIP / postal integers."
+    },
+    {
+      "intent": "fill_country",
+      "selector": "input[autocomplete='country']",
+      "action_type": "type",
+      "semantic_label": "Country Input Field",
+      "is_navigation": false,
+      "interaction_steps": "Select input boundary and keystroke 2-digit ISO abbreviation."
+    },
+    {
+      "intent": "fill_email",
+      "selector": "input[autocomplete='email']",
+      "action_type": "type",
+      "semantic_label": "Email Input Field",
+      "is_navigation": false,
+      "interaction_steps": "Select input boundary and keystroke valid email string."
+    },
+    {
+      "intent": "fill_telephone",
+      "selector": "input[autocomplete='tel']",
+      "action_type": "type",
+      "semantic_label": "Telephone Input Field",
+      "is_navigation": false,
+      "interaction_steps": "Select input boundary and keystroke phone number."
+    },
+    {
+      "intent": "submit_form",
+      "selector": "input[type='submit']",
+      "action_type": "click",
+      "semantic_label": "Submit Form Native Execution",
+      "is_navigation": true,
+      "interaction_steps": "Click to serialize form node input states and submit implicitly.",
+      "target_state_hash": "submission_result_hash456"
+    },
+    {
+      "intent": "reset_form",
+      "selector": "button[type='reset']",
+      "action_type": "click",
+      "semantic_label": "Reset Form Constraints",
+      "is_navigation": false,
+      "interaction_steps": "Click to inherently flush all typed form constraint data bounds natively."
+    }
+  ]
+}

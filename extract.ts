@@ -22,6 +22,7 @@ async function extract(url: string, name: string) {
 async function main() {
   await extract('https://reneang17.github.io/portfolio/', 'portfolio');
   await extract('https://makayoga.space/', 'makayoga');
+  await extract('https://mozilla.github.io/form-fill-examples/basic.html', 'mozilla-form');
 }
 
 main().catch(console.error);

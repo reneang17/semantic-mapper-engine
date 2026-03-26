@@ -21,7 +21,7 @@ export function pruneHtml(html: string): string {
   });
 
   // 3. Strip attributes to only the allowed ones
-  const allowedAttributes = ['id', 'class', 'href', 'name', 'role', 'aria-label', 'placeholder', 'data-testid', 'type'];
+  const allowedAttributes = ['id', 'class', 'href', 'name', 'role', 'aria-label', 'placeholder', 'data-testid', 'type', 'value', 'autocomplete', 'maxlength'];
   $('*').each((_, el) => {
     if (el.type === 'tag') {
       const attributes = Object.keys(el.attribs || {});
