@@ -1,0 +1,60 @@
+# Semantic Mapper Engine
+
+Semantic Mapper Engine is a Node.js/TypeScript developer tool designed to bridge the gap between AI Agents and web navigation intuitively. 
+
+Instead of relying on brittle CSS paths or XPaths, this engine crawls a webpage, rigorously prunes the DOM, and utilizes a state-of-the-art Vision-Language Model (Gemini) to evaluate the visual layout. 
+
+It generates a deterministic, flat, relational directory of JSON configurations - an API-like semantic layer that allows agents to interact with dynamic SPA web environments through robust human-like intents (e.g., `submit_login`, `navigate_home`) without crashing their semantic token limits!
+
+## Motivation & Architecture
+AI agents attempting web automation frequently break when web developers change class names or DOM structures. Furthermore, passing an agent an entire nested sitemap's worth of JSON inevitably obliterates their limited token context processing window. 
+
+By leveraging **Playwright** for headless visual rendering, **Cheerio** to aggressively shed token-heavy non-interactive nodes, and **Gemini 2.5's** multimodal reasoning, this project minimizes context requirements while dynamically maximizing mapping accuracy using resilient attributes (`aria-label`, `role`, `data-testid`).
+
+### Relational BFS Spider Crawling
+The mapping engine utilizes an intrinsic **Breadth-First-Search (BFS)** autonomous crawler to thoroughly traverse target domains natively:
+1. It reads the current localized visual DOM view and hashes it to instantly prevent infinite loop recursion traps.
+2. It generates a single mapping array file containing localized interaction targets (e.g., `adjust_brightness`, `navigate_portfolio`) capturing highly granular `available_options` and `interaction_steps`.
+3. If a targeted interaction navigates to a localized modal or entirely distinct view, it computes a `target_state_hash` pointer onto that element and exhaustively queues the targeted view for rendering.
+4. Downstream agents simply pivot around a localized layout pointer, isolating loaded JSON nodes to drastically slash Required Context Limit constraints!
+
+## Setup & Installation
+
+Ensure you have Node 18+ installed on your system.
+
+```bash
+# Install NPM dependencies
+npm install
+
+# Install Playwright browser dependencies
+npx playwright install chromium
+
+# Compile Typescript Engine Source
+npm run build
+```
+
+## Environment Configuration
+You must strictly configure your VLM authentication to operate the semantic API. Create a `.env` file in the root directory:
+```
+GEMINI_API_KEY=your-google-gemini-api-key-here
+```
+
+## Usage
+Boot up the express web pipeline:
+```bash
+npm start
+# or 
+node dist/server.js
+```
+
+Once running, generate a completely exhausted relational state-mapping directory architecture dynamically via standard HTTP routing (`depth` param restricts crawling limits):
+```bash
+curl "http://localhost:3000/api/v1/map?url=https://makayoga.space/&depth=2"
+```
+
+## Agentic Testing & Output Maps
+Included natively in the repository are the local `test-maps/` directories hosting completely mapped topologies of demonstrative Web interfaces. 
+
+These directories structurally represent exactly how the linked graph network natively executes (`root.json` cleanly pointing execution toward local `child_hash.json` modular state buffers).
+
+Furthermore, the standalone scripts like `extract.ts` natively permit local visualization mimicking the strict DOM string stripping capabilities securely without exhausting VLM Quotas incrementally!

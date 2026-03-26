@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Build Output
+dist/
+
+# Environment
+.env
+
+# Temporary Execution Artifacts
+temp/
+*.log
+
+# OS Files
+.DS_Store

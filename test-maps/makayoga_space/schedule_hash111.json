@@ -1,0 +1,25 @@
+{
+  "state_hash": "schedule_hash111",
+  "depth": 1,
+  "url": "https://makayoga.space/#horarios",
+  "elements": [
+    {
+      "intent": "book_schedule_slot",
+      "selector": "a:has-text('Reservar')",
+      "action_type": "click",
+      "semantic_label": "Book Schedule Space",
+      "is_navigation": true,
+      "interaction_steps": "Click to launch booking modal / dynamic form payload.",
+      "target_state_hash": "booking_modal_hash999"
+    },
+    {
+      "intent": "navigate_home",
+      "selector": "button:has-text('Volver al inicio')",
+      "action_type": "click",
+      "semantic_label": "Back to Home",
+      "is_navigation": true,
+      "interaction_steps": "Return to Landing View.",
+      "target_state_hash": "root_makayoga123"
+    }
+  ]
+}

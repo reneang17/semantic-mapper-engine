@@ -1,0 +1,16 @@
+{
+  "state_hash": "supportbuddy_modal111",
+  "depth": 1,
+  "url": "https://reneang17.github.io/portfolio/",
+  "elements": [
+    {
+      "intent": "close_support_buddy_details",
+      "selector": "button.close-modal",
+      "action_type": "click",
+      "semantic_label": "Close Project Details Modal",
+      "is_navigation": true,
+      "interaction_steps": "Click to hide internal project description layout.",
+      "target_state_hash": "root_portfolio123"
+    }
+  ]
+}

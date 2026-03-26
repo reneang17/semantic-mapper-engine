@@ -1,0 +1,16 @@
+{
+  "state_hash": "universal_pdf_modal456",
+  "depth": 1,
+  "url": "https://reneang17.github.io/portfolio/",
+  "elements": [
+    {
+      "intent": "close_universal_pdf_details",
+      "selector": "button.close-modal",
+      "action_type": "click",
+      "semantic_label": "Close Project Details Modal",
+      "is_navigation": true,
+      "interaction_steps": "Click to hide internal project description layout.",
+      "target_state_hash": "root_portfolio123"
+    }
+  ]
+}

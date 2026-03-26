@@ -1,0 +1,197 @@
+{
+  "state_hash": "root_portfolio123",
+  "depth": 0,
+  "url": "https://reneang17.github.io/portfolio/",
+  "elements": [
+    {
+      "intent": "navigate_timeline_section",
+      "selector": "a[href='#timeline']",
+      "action_type": "click",
+      "semantic_label": "Timeline Scope Link",
+      "is_navigation": false,
+      "interaction_steps": "Standard anchor link resolving locally."
+    },
+    {
+      "intent": "navigate_works_section",
+      "selector": "a[href='#works']",
+      "action_type": "click",
+      "semantic_label": "Works Scope Link",
+      "is_navigation": false,
+      "interaction_steps": "Standard anchor link resolving locally."
+    },
+    {
+      "intent": "navigate_skills_section",
+      "selector": "a[href='#skills']",
+      "action_type": "click",
+      "semantic_label": "Toolbox Scope Link",
+      "is_navigation": false,
+      "interaction_steps": "Standard anchor link resolving locally."
+    },
+    {
+      "intent": "navigate_contact_section",
+      "selector": "a[href='#contact']",
+      "action_type": "click",
+      "semantic_label": "Contact Scope Link",
+      "is_navigation": false,
+      "interaction_steps": "Standard anchor link resolving locally."
+    },
+    {
+      "intent": "adjust_theme_brightness",
+      "selector": "input#theme-slider",
+      "action_type": "drag",
+      "semantic_label": "Adjust Theme Brightness Toggle",
+      "is_navigation": false,
+      "available_options": ["0", "1", "2", "3", "4"],
+      "interaction_steps": "Modify html input element properties to simulate dragging slider."
+    },
+    {
+      "intent": "view_engineering_target_button",
+      "selector": "a.btn-retro-target",
+      "action_type": "click",
+      "semantic_label": "View Engineering Anchor",
+      "is_navigation": false,
+      "interaction_steps": "Trigger scroll targeting injection point bounding."
+    },
+    {
+      "intent": "download_resume",
+      "selector": "a.btn-retro-resume",
+      "action_type": "click",
+      "semantic_label": "Invoke Resume Download Event",
+      "is_navigation": false,
+      "interaction_steps": "Awaits internal browser download stream pipe."
+    },
+    {
+      "intent": "view_universal_pdf_details",
+      "selector": "article:has(a[href='universal-pdf.html']) button",
+      "action_type": "click",
+      "semantic_label": "View Project Details Modal: Universal PDF",
+      "is_navigation": true,
+      "interaction_steps": "Click to unhide internal project description layout.",
+      "target_state_hash": "universal_pdf_modal456"
+    },
+    {
+      "intent": "view_universal_pdf_page",
+      "selector": "a[href='universal-pdf.html']",
+      "action_type": "click",
+      "semantic_label": "Navigate to Dedicated Universal PDF Page",
+      "is_navigation": false,
+      "interaction_steps": "Target external HTML page node tree."
+    },
+    {
+      "intent": "view_universal_pdf_demo1",
+      "selector": "a[href='https://reneang17.github.io/forestViewer/']",
+      "action_type": "click",
+      "semantic_label": "View Demo 1: Forest Viewer",
+      "is_navigation": false,
+      "interaction_steps": "Target off-host repository demo layout wrapper."
+    },
+    {
+      "intent": "view_universal_pdf_demo3",
+      "selector": "a[href='https://reneang17.github.io/spotlight/']",
+      "action_type": "click",
+      "semantic_label": "View Demo 3: Spotlight",
+      "is_navigation": false,
+      "interaction_steps": "Target off-host repository demo layout wrapper."
+    },
+    {
+      "intent": "view_forward_details",
+      "selector": "article:has(a[href*='forward']) button",
+      "action_type": "click",
+      "semantic_label": "View Project Details Modal: Forward",
+      "is_navigation": true,
+      "interaction_steps": "Click to unhide internal project description layout.",
+      "target_state_hash": "forward_modal789"
+    },
+    {
+      "intent": "view_forward_github_repo",
+      "selector": "a[href*='github.com/reneang17/forward']",
+      "action_type": "click",
+      "semantic_label": "Forward GitHub Repository",
+      "is_navigation": false,
+      "interaction_steps": "Target Github domain tree structure natively."
+    },
+    {
+      "intent": "view_forward_demo",
+      "selector": "a[href*='infinite-garden-32666-2888f7f5b00e']",
+      "action_type": "click",
+      "semantic_label": "Forward Heroku Deploy Target",
+      "is_navigation": false,
+      "interaction_steps": "Target Herokuapp domain tree structure natively."
+    },
+    {
+      "intent": "view_support_buddy_details",
+      "selector": "article:has(a[href*='SupportBuddy']) button",
+      "action_type": "click",
+      "semantic_label": "View Project Details Modal: Support Buddy",
+      "is_navigation": true,
+      "interaction_steps": "Click to unhide internal project description layout.",
+      "target_state_hash": "supportbuddy_modal111"
+    },
+    {
+      "intent": "view_support_buddy_github_repo",
+      "selector": "a[href*='github.com/reneang17/SupportBuddy']",
+      "action_type": "click",
+      "semantic_label": "SupportBuddy GitHub Repository",
+      "is_navigation": false,
+      "interaction_steps": "Target Github domain tree structure natively."
+    },
+    {
+      "intent": "view_author_encoder_details",
+      "selector": "article:has(a[href*='authorencoder']) button",
+      "action_type": "click",
+      "semantic_label": "View Project Details Modal: Author Encoder",
+      "is_navigation": true,
+      "interaction_steps": "Click to unhide internal project description layout.",
+      "target_state_hash": "author_encoder_modal222"
+    },
+    {
+      "intent": "view_author_encoder_github_repo",
+      "selector": "a[href*='github.com/reneang17/authorencoder']",
+      "action_type": "click",
+      "semantic_label": "Author Encoder GitHub Repository",
+      "is_navigation": false,
+      "interaction_steps": "Target Github domain tree structure natively."
+    },
+    {
+      "intent": "view_maka_yoga_details",
+      "selector": "article:has(a[href*='github.com/reneang17/maka']) button",
+      "action_type": "click",
+      "semantic_label": "View Project Details Modal: Maka Yoga",
+      "is_navigation": true,
+      "interaction_steps": "Click to unhide internal project description layout.",
+      "target_state_hash": "maka_yoga_modal333"
+    },
+    {
+      "intent": "view_maka_yoga_github_repo",
+      "selector": "a[href*='github.com/reneang17/maka']",
+      "action_type": "click",
+      "semantic_label": "Maka Yoga GitHub Repository",
+      "is_navigation": false,
+      "interaction_steps": "Target Github domain tree structure natively."
+    },
+    {
+      "intent": "view_maka_yoga_demo",
+      "selector": "a[href*='imakayoga.space']",
+      "action_type": "click",
+      "semantic_label": "Maka Yoga Live Site Tracking Target",
+      "is_navigation": false,
+      "interaction_steps": "Target off-host Live URL structure natively."
+    },
+    {
+      "intent": "contact_email_action",
+      "selector": "a[href^='mailto:']",
+      "action_type": "click",
+      "semantic_label": "Spawn Native Mail Client",
+      "is_navigation": false,
+      "interaction_steps": "Intercept implicit mailto href syntax layer locally without click!"
+    },
+    {
+      "intent": "contact_linkedin_action",
+      "selector": "a[href*='linkedin.com/in']",
+      "action_type": "click",
+      "semantic_label": "Trigger LinkedIn Redirection Flow",
+      "is_navigation": false,
+      "interaction_steps": "Navigate seamlessly to native remote Linkedin Profile endpoint."
+    }
+  ]
+}
