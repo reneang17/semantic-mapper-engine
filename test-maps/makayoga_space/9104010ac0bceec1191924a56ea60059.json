@@ -1,0 +1,511 @@
+{
+  "state_hash": "9104010ac0bceec1191924a56ea60059",
+  "depth": 1,
+  "url": "https://makayoga.space/#schedule",
+  "elements": [
+    {
+      "intent": "navigate_to_vision_section",
+      "selector": ".hidden.md\\:flex button:nth-child(1)",
+      "action_type": "click",
+      "semantic_label": "Visión",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the button labeled 'Visión' in the desktop navigation menu."
+    },
+    {
+      "intent": "navigate_to_nosotras_section",
+      "selector": ".hidden.md\\:flex button:nth-child(2)",
+      "action_type": "click",
+      "semantic_label": "Nosotras",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the button labeled 'Nosotras' in the desktop navigation menu."
+    },
+    {
+      "intent": "navigate_to_horarios_section",
+      "selector": ".hidden.md\\:flex button:nth-child(3)",
+      "action_type": "click",
+      "semantic_label": "Horarios",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the button labeled 'Horarios' in the desktop navigation menu."
+    },
+    {
+      "intent": "navigate_to_espacio_section",
+      "selector": ".hidden.md\\:flex button:nth-child(4)",
+      "action_type": "click",
+      "semantic_label": "Espacio",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the button labeled 'Espacio' in the desktop navigation menu."
+    },
+    {
+      "intent": "navigate_to_testimonios_section",
+      "selector": ".hidden.md\\:flex button:nth-child(5)",
+      "action_type": "click",
+      "semantic_label": "Testimonios",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the button labeled 'Testimonios' in the desktop navigation menu."
+    },
+    {
+      "intent": "navigate_to_contacto_section",
+      "selector": ".hidden.md\\:flex button:nth-child(6)",
+      "action_type": "click",
+      "semantic_label": "Contacto",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the button labeled 'Contacto' in the desktop navigation menu."
+    },
+    {
+      "intent": "toggle_language_desktop",
+      "selector": "#lang-toggle-desktop",
+      "action_type": "click",
+      "semantic_label": "EN (Language Toggle - Desktop)",
+      "is_navigation": false,
+      "available_options": [],
+      "interaction_steps": "Click the language toggle button to switch between Spanish and English."
+    },
+    {
+      "intent": "open_mobile_menu",
+      "selector": "#mobile-menu-btn",
+      "action_type": "click",
+      "semantic_label": "Mobile Menu Button",
+      "is_navigation": false,
+      "available_options": [],
+      "interaction_steps": "Click the hamburger/menu button to open the mobile navigation panel."
+    },
+    {
+      "intent": "navigate_to_vision_section_mobile",
+      "selector": "#mobile-menu button:nth-child(1)",
+      "action_type": "click",
+      "semantic_label": "Visión (Mobile)",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the 'Visión' button in the mobile menu panel."
+    },
+    {
+      "intent": "navigate_to_nosotras_section_mobile",
+      "selector": "#mobile-menu button:nth-child(2)",
+      "action_type": "click",
+      "semantic_label": "Nosotras (Mobile)",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the 'Nosotras' button in the mobile menu panel."
+    },
+    {
+      "intent": "navigate_to_horarios_section_mobile",
+      "selector": "#mobile-menu button:nth-child(3)",
+      "action_type": "click",
+      "semantic_label": "Horarios (Mobile)",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the 'Horarios' button in the mobile menu panel."
+    },
+    {
+      "intent": "navigate_to_espacio_section_mobile",
+      "selector": "#mobile-menu button:nth-child(4)",
+      "action_type": "click",
+      "semantic_label": "Espacio (Mobile)",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the 'Espacio' button in the mobile menu panel."
+    },
+    {
+      "intent": "navigate_to_testimonios_section_mobile",
+      "selector": "#mobile-menu button:nth-child(5)",
+      "action_type": "click",
+      "semantic_label": "Testimonios (Mobile)",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the 'Testimonios' button in the mobile menu panel."
+    },
+    {
+      "intent": "navigate_to_contacto_section_mobile",
+      "selector": "#mobile-menu button:nth-child(6)",
+      "action_type": "click",
+      "semantic_label": "Contacto (Mobile)",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the 'Contacto' button in the mobile menu panel."
+    },
+    {
+      "intent": "toggle_language_mobile",
+      "selector": "#lang-toggle-mobile",
+      "action_type": "click",
+      "semantic_label": "EN (Language Toggle - Mobile)",
+      "is_navigation": false,
+      "available_options": [],
+      "interaction_steps": "Click the language toggle button in the mobile menu to switch between Spanish and English."
+    },
+    {
+      "intent": "navigate_to_slide_1",
+      "selector": "button[aria-label='Slide 1']",
+      "action_type": "click",
+      "semantic_label": "Slide 1 Indicator",
+      "is_navigation": false,
+      "available_options": [],
+      "interaction_steps": "Click the carousel indicator button to navigate to slide 1."
+    },
+    {
+      "intent": "navigate_to_slide_2",
+      "selector": "button[aria-label='Slide 2']",
+      "action_type": "click",
+      "semantic_label": "Slide 2 Indicator",
+      "is_navigation": false,
+      "available_options": [],
+      "interaction_steps": "Click the carousel indicator button to navigate to slide 2."
+    },
+    {
+      "intent": "navigate_to_slide_3",
+      "selector": "button[aria-label='Slide 3']",
+      "action_type": "click",
+      "semantic_label": "Slide 3 Indicator",
+      "is_navigation": false,
+      "available_options": [],
+      "interaction_steps": "Click the carousel indicator button to navigate to slide 3."
+    },
+    {
+      "intent": "navigate_to_community_voices",
+      "selector": "#page-home section#inicio button",
+      "action_type": "click",
+      "semantic_label": "Voces de la comunidad",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the 'Voces de la comunidad' button in the hero section."
+    },
+    {
+      "intent": "read_full_manifesto",
+      "selector": "#page-home .py-24 button",
+      "action_type": "click",
+      "semantic_label": "Leer Manifiesto Completo",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the 'Leer Manifiesto Completo' button to view the full manifesto."
+    },
+    {
+      "intent": "view_google_maps",
+      "selector": "a[aria-label='Ver en Google Maps']",
+      "action_type": "click",
+      "semantic_label": "Ver en Google Maps",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the link to open the location in Google Maps in a new tab."
+    },
+    {
+      "intent": "view_schedule",
+      "selector": "#page-home .bg-oaxaca-wood button",
+      "action_type": "click",
+      "semantic_label": "Ver horarios",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the 'Ver horarios' button to navigate to the schedule view."
+    },
+    {
+      "intent": "contact_via_whatsapp",
+      "selector": "a[aria-label='WhatsApp']",
+      "action_type": "click",
+      "semantic_label": "WhatsApp",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the WhatsApp link to open a WhatsApp chat."
+    },
+    {
+      "intent": "navigate_to_instagram",
+      "selector": "a[aria-label='Instagram']",
+      "action_type": "click",
+      "semantic_label": "Instagram",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the Instagram link to open the Instagram profile."
+    },
+    {
+      "intent": "navigate_to_facebook",
+      "selector": "a[aria-label='Facebook']",
+      "action_type": "click",
+      "semantic_label": "Facebook",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the Facebook link to open the Facebook page."
+    },
+    {
+      "intent": "go_back_to_home_from_vision",
+      "selector": "#page-vision button.text-oaxaca-clay",
+      "action_type": "click",
+      "semantic_label": "← Volver al inicio (Visión)",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the back button to return to the home view from the Visión page."
+    },
+    {
+      "intent": "join_community_from_vision",
+      "selector": "#page-vision .bg-\\[\\#BBA182\\] button",
+      "action_type": "click",
+      "semantic_label": "Únete a nosotros",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the 'Únete a nosotros' button in the manifesto section of the Visión page."
+    },
+    {
+      "intent": "go_back_to_home_from_team",
+      "selector": "#page-team button.text-oaxaca-clay",
+      "action_type": "click",
+      "semantic_label": "← Volver al inicio (Nosotras)",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the back button to return to the home view from the Nosotras page."
+    },
+    {
+      "intent": "go_back_from_instructor_alosja",
+      "selector": "#page-instructor-alosja .mb-10 button",
+      "action_type": "click",
+      "semantic_label": "← Volver (Alosja)",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the back button to return from the Alosja instructor page."
+    },
+    {
+      "intent": "contact_alosja_via_whatsapp",
+      "selector": "a[href*='clases%20con%20Alosja']",
+      "action_type": "click",
+      "semantic_label": "Contact Alosja via WhatsApp",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the WhatsApp link to inquire about classes with Alosja."
+    },
+    {
+      "intent": "go_back_from_instructor_maria",
+      "selector": "#page-instructor-maria .mb-10 button",
+      "action_type": "click",
+      "semantic_label": "← Volver (María)",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the back button to return from the María instructor page."
+    },
+    {
+      "intent": "contact_maria_via_whatsapp",
+      "selector": "a[href*='clases%20con%20Mar%C3%ADa']",
+      "action_type": "click",
+      "semantic_label": "Contact María via WhatsApp",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the WhatsApp link to inquire about classes with María."
+    },
+    {
+      "intent": "go_back_from_instructor_karina",
+      "selector": "#page-instructor-karina .mb-10 button",
+      "action_type": "click",
+      "semantic_label": "← Volver (Karina)",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the back button to return from the Karina instructor page."
+    },
+    {
+      "intent": "contact_karina_via_whatsapp",
+      "selector": "a[href*='clases%20con%20Karina']",
+      "action_type": "click",
+      "semantic_label": "Contact Karina via WhatsApp",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the WhatsApp link to inquire about classes with Karina."
+    },
+    {
+      "intent": "go_back_from_instructor_phan",
+      "selector": "#page-instructor-phan .mb-10 button",
+      "action_type": "click",
+      "semantic_label": "← Volver (Phan)",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the back button to return from the Phan instructor page."
+    },
+    {
+      "intent": "contact_phan_via_whatsapp",
+      "selector": "a[href*='clases%20con%20Phan']",
+      "action_type": "click",
+      "semantic_label": "Contact Phan via WhatsApp",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the WhatsApp link to inquire about classes with Phan."
+    },
+    {
+      "intent": "go_back_to_home_from_contact",
+      "selector": "#page-contact button.text-oaxaca-clay",
+      "action_type": "click",
+      "semantic_label": "← Volver al inicio (Contacto)",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the back button to return to the home view from the Contact page."
+    },
+    {
+      "intent": "view_location_on_maps_from_contact",
+      "selector": "#page-contact a[aria-label='Ver en Google Maps']",
+      "action_type": "click",
+      "semantic_label": "Ver en Google Maps (Contacto)",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the Google Maps icon link to open the studio location in Google Maps."
+    },
+    {
+      "intent": "contact_via_whatsapp_from_contact_page",
+      "selector": "#page-contact a[href='https://wa.me/529513464383']",
+      "action_type": "click",
+      "semantic_label": "WhatsApp (Contacto)",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the WhatsApp link on the contact page to open a WhatsApp chat."
+    },
+    {
+      "intent": "navigate_to_instagram_from_contact",
+      "selector": "#page-contact a[href='https://www.instagram.com/makayoga108/']",
+      "action_type": "click",
+      "semantic_label": "Instagram (Contacto)",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the Instagram link on the contact page to open the Instagram profile."
+    },
+    {
+      "intent": "navigate_to_facebook_from_contact",
+      "selector": "#page-contact a[href='https://www.facebook.com/makayoga108']",
+      "action_type": "click",
+      "semantic_label": "Facebook (Contacto)",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the Facebook link on the contact page to open the Facebook page."
+    },
+    {
+      "intent": "go_back_to_home_from_schedule",
+      "selector": "#page-schedule button.text-oaxaca-clay",
+      "action_type": "click",
+      "semantic_label": "← Volver al inicio (Horarios)",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the back button to return to the home view from the Schedule page."
+    },
+    {
+      "intent": "inquire_updated_schedule_via_whatsapp",
+      "selector": "a[href*='horarios%20actualizados']",
+      "action_type": "click",
+      "semantic_label": "Ask for updated schedule via WhatsApp",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the WhatsApp link to ask about updated class schedules."
+    },
+    {
+      "intent": "book_class_with_phan_via_whatsapp",
+      "selector": "a[href*='agendar%20una%20clase%20con%20Phan']",
+      "action_type": "click",
+      "semantic_label": "Book a class with Phan via WhatsApp",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the WhatsApp link to book a class with Phan."
+    },
+    {
+      "intent": "close_schedule_lightbox",
+      "selector": "#schedule-lightbox-close",
+      "action_type": "click",
+      "semantic_label": "Cerrar (Schedule Lightbox)",
+      "is_navigation": false,
+      "available_options": [],
+      "interaction_steps": "Click the close button to dismiss the schedule lightbox modal."
+    },
+    {
+      "intent": "close_class_options_modal",
+      "selector": "#class-options-close",
+      "action_type": "click",
+      "semantic_label": "Cerrar (Class Options Modal)",
+      "is_navigation": false,
+      "available_options": [],
+      "interaction_steps": "Click the close button to dismiss the class options modal."
+    },
+    {
+      "intent": "view_instructor_profile_from_modal",
+      "selector": "#class-options-profile",
+      "action_type": "click",
+      "semantic_label": "View Instructor Profile",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the profile button in the class options modal to navigate to the instructor's profile page."
+    },
+    {
+      "intent": "book_class_via_whatsapp_from_modal",
+      "selector": "#class-options-whatsapp",
+      "action_type": "click",
+      "semantic_label": "Book via WhatsApp (Class Options Modal)",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the WhatsApp link in the class options modal to book a class."
+    },
+    {
+      "intent": "go_back_to_home_from_testimonios",
+      "selector": "#page-testimonios button.text-oaxaca-clay",
+      "action_type": "click",
+      "semantic_label": "← Volver al inicio (Testimonios)",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the back button to return to the home view from the Testimonios page."
+    },
+    {
+      "intent": "view_google_reviews",
+      "selector": "#page-testimonios a[href*='google.com/search']",
+      "action_type": "click",
+      "semantic_label": "Ver opiniones en Google",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the Google Reviews card link to open MaKa Yoga Oaxaca reviews on Google."
+    },
+    {
+      "intent": "go_back_to_home_from_space",
+      "selector": "#page-space button.text-oaxaca-clay",
+      "action_type": "click",
+      "semantic_label": "← Volver al inicio (Espacio)",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the back button to return to the home view from the Espacio page."
+    },
+    {
+      "intent": "reserve_class_from_space",
+      "selector": "#page-space .mt-16 button",
+      "action_type": "click",
+      "semantic_label": "Reserva tu clase",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the 'Reserva tu clase' button to navigate to class booking."
+    },
+    {
+      "intent": "contact_via_whatsapp_floating_button",
+      "selector": "#whatsapp-float",
+      "action_type": "click",
+      "semantic_label": "Escríbenos por WhatsApp (Floating Button)",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the floating WhatsApp button to open a WhatsApp chat with the studio."
+    },
+    {
+      "intent": "close_lightbox",
+      "selector": "#lightbox button:first-child",
+      "action_type": "click",
+      "semantic_label": "Close Lightbox",
+      "is_navigation": false,
+      "available_options": [],
+      "interaction_steps": "Click the close button (top right) to dismiss the image lightbox."
+    },
+    {
+      "intent": "navigate_lightbox_previous",
+      "selector": "#lightbox button:nth-child(2)",
+      "action_type": "click",
+      "semantic_label": "Previous Image (Lightbox)",
+      "is_navigation": false,
+      "available_options": [],
+      "interaction_steps": "Click the left arrow button to navigate to the previous image in the lightbox."
+    },
+    {
+      "intent": "navigate_lightbox_next",
+      "selector": "#lightbox button:nth-child(3)",
+      "action_type": "click",
+      "semantic_label": "Next Image (Lightbox)",
+      "is_navigation": false,
+      "available_options": [],
+      "interaction_steps": "Click the right arrow button to navigate to the next image in the lightbox."
+    }
+  ]
+}

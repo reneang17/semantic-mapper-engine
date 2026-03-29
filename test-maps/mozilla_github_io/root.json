@@ -1,0 +1,107 @@
+{
+  "state_hash": "f2b1505844742d8c282dda86771f8335",
+  "depth": 0,
+  "url": "https://mozilla.github.io/form-fill-examples/basic.html",
+  "elements": [
+    {
+      "intent": "enter_name",
+      "selector": "input[autocomplete='name']",
+      "action_type": "type",
+      "semantic_label": "Name",
+      "is_navigation": false,
+      "available_options": [],
+      "interaction_steps": "Click the input field and type the full name string."
+    },
+    {
+      "intent": "enter_organization",
+      "selector": "input[autocomplete='organization']",
+      "action_type": "type",
+      "semantic_label": "Organization",
+      "is_navigation": false,
+      "available_options": [],
+      "interaction_steps": "Click the input field and type the organization name."
+    },
+    {
+      "intent": "enter_street_address",
+      "selector": "input[autocomplete='street-address']",
+      "action_type": "type",
+      "semantic_label": "Street Address",
+      "is_navigation": false,
+      "available_options": [],
+      "interaction_steps": "Click the input field and type the street address."
+    },
+    {
+      "intent": "enter_address_level2",
+      "selector": "input[autocomplete='address-level2']",
+      "action_type": "type",
+      "semantic_label": "Address Level 2 (City)",
+      "is_navigation": false,
+      "available_options": [],
+      "interaction_steps": "Click the input field and type the city or locality."
+    },
+    {
+      "intent": "enter_address_level1",
+      "selector": "input[autocomplete='address-level1']",
+      "action_type": "type",
+      "semantic_label": "Address Level 1 (State/Province)",
+      "is_navigation": false,
+      "available_options": [],
+      "interaction_steps": "Click the input field and type the state or province."
+    },
+    {
+      "intent": "enter_postal_code",
+      "selector": "input[autocomplete='postal-code']",
+      "action_type": "type",
+      "semantic_label": "Postal Code",
+      "is_navigation": false,
+      "available_options": [],
+      "interaction_steps": "Click the input field and type the postal or ZIP code."
+    },
+    {
+      "intent": "enter_country",
+      "selector": "input[autocomplete='country']",
+      "action_type": "type",
+      "semantic_label": "Country (2-digit abbreviation)",
+      "is_navigation": false,
+      "available_options": [],
+      "interaction_steps": "Click the input field and type the 2-character ISO country code (e.g., 'US'). Maximum 2 characters allowed."
+    },
+    {
+      "intent": "enter_email",
+      "selector": "input[autocomplete='email']",
+      "action_type": "type",
+      "semantic_label": "Email",
+      "is_navigation": false,
+      "available_options": [],
+      "interaction_steps": "Click the input field and type the email address."
+    },
+    {
+      "intent": "enter_telephone",
+      "selector": "input[autocomplete='tel']",
+      "action_type": "type",
+      "semantic_label": "Telephone",
+      "is_navigation": false,
+      "available_options": [],
+      "interaction_steps": "Click the input field and type the telephone number."
+    },
+    {
+      "intent": "submit_form",
+      "selector": "input[type='submit']",
+      "action_type": "click",
+      "semantic_label": "Submit",
+      "is_navigation": true,
+      "available_options": [],
+      "interaction_steps": "Click the Submit button to submit the form data.",
+      "target_state_hash": "f2b1505844742d8c282dda86771f8335"
+    },
+    {
+      "intent": "reset_form",
+      "selector": "button[type='reset']",
+      "action_type": "click",
+      "semantic_label": "Reset",
+      "is_navigation": false,
+      "available_options": [],
+      "interaction_steps": "Click the Reset button to clear all form fields back to their default values."
+    }
+  ]
+}

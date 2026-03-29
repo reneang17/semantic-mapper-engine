@@ -18,7 +18,7 @@ interface QueueItem {
     };
 }
 
-export async function spiderCrawl(baseUrl: string, maxDepth = 2): Promise<any> {
+export async function spiderCrawl(baseUrl: string, maxDepth = 2, maxPages = 12): Promise<any> {
     visitedHashes.clear();
     
     const tempDir = path.join(process.cwd(), 'temp');
@@ -36,9 +36,11 @@ export async function spiderCrawl(baseUrl: string, maxDepth = 2): Promise<any> {
         depth: 0 
     }];
 
-    while(queue.length > 0) {
+    while(queue.length > 0 && statesMap.size < maxPages) {
         const current = queue.shift();
         if (!current) continue;
+
+        console.log(`[Spider] Navigating action queue [Depth: ${current.depth}] - Evaluating ${current.actionSequence.length} interactions...`);
         
         const context = await browser.newContext({ viewport: { width: 1920, height: 1080 }});
         const page = await context.newPage();
@@ -88,17 +90,13 @@ export async function spiderCrawl(baseUrl: string, maxDepth = 2): Promise<any> {
             
             // Pin the initial landing page root
             if (current.depth === 0) rootHash = hash;
-
-            const screenshotName = `spider-depth${current.depth}-${hash.substring(0,8)}.png`;
-            const screenshotPath = path.join(tempDir, screenshotName);
-            await page.screenshot({ path: screenshotPath, fullPage: true });
             
             let elementsMap: any[] = [];
             try {
-                if (!process.env.GEMINI_API_KEY) {
-                    console.warn('[Spider] GEMINI_API_KEY missing - generating empty generic structural map');
+                if (!process.env.ANTHROPIC_API_KEY) {
+                    console.warn('[Spider] ANTHROPIC_API_KEY missing - generating empty generic structural map');
                 } else {
-                    elementsMap = await generateSemanticMap(prunedHtml, screenshotPath);
+                    elementsMap = await generateSemanticMap(prunedHtml);
                 }
             } catch(e) {
                 console.error('[Spider] VLM mapping error:', e);
@@ -113,6 +111,7 @@ export async function spiderCrawl(baseUrl: string, maxDepth = 2): Promise<any> {
             };
             
             statesMap.set(hash, stateData);
+            console.log(`[Spider] Mapped state [${hash.substring(0,8)}] successfully. (Stored ${statesMap.size}/${maxPages})`);
 
             if (current.depth < maxDepth && elementsMap) {
                 for (let i = 0; i < elementsMap.length; i++) {
