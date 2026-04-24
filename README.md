@@ -1,22 +1,63 @@
 # Semantic Mapper Engine
 
+> 🏆 **Current State: Best Working Version (Antigravity Emulation)**
+> This version locks in the highly successful "Antigravity Emulation" pipeline. Instead of relying on a programmatic API connection which burns through tokens and can be hard to debug, this version stabilizes the core scraping, pruning, and BFS relational mapping logic by relying on a human-in-the-loop AI Agent (Antigravity) acting as the Vision-Language Model endpoint.
+
 Semantic Mapper Engine is a Node.js/TypeScript developer tool designed to bridge the gap between AI Agents and web navigation intuitively. 
 
-Instead of relying on brittle CSS paths or XPaths, this engine crawls a webpage, rigorously prunes the DOM, and utilizes a state-of-the-art Vision-Language Model (Gemini) to evaluate the visual layout. 
-
-It generates a deterministic, flat, relational directory of JSON configurations - an API-like semantic layer that allows agents to interact with dynamic SPA web environments through robust human-like intents (e.g., `submit_login`, `navigate_home`) without crashing their semantic token limits!
+Instead of relying on brittle CSS paths or XPaths, this engine crawls a webpage, rigorously prunes the DOM, and utilizes a state-of-the-art Vision-Language Model to evaluate the visual layout. It generates a deterministic, flat, relational directory of JSON configurations - an API-like semantic layer that allows downstream agents to interact with dynamic SPA web environments through robust human-like intents (e.g., `submit_login`, `navigate_home`) without crashing their semantic token limits!
 
 ## Motivation & Architecture
-AI agents attempting web automation frequently break when web developers change class names or DOM structures. Furthermore, passing an agent an entire nested sitemap's worth of JSON inevitably obliterates their limited token context processing window. 
+AI agents attempting web automation frequently break when web developers change class names or DOM structures. Furthermore, passing an agent an entire nested sitemap's worth of HTML or JSON inevitably obliterates their limited token context processing window. 
 
-By leveraging **Playwright** for headless visual rendering, **Cheerio** to aggressively shed token-heavy non-interactive nodes, and **Gemini 2.5's** multimodal reasoning (currently emulated via the Antigravity agent), this project minimizes context requirements while dynamically maximizing mapping accuracy using resilient attributes (`aria-label`, `role`, `data-testid`).
+By leveraging **Playwright** for headless visual rendering and **Cheerio** to aggressively shed token-heavy non-interactive nodes, this project minimizes context requirements. It maximizes mapping accuracy by using highly resilient attributes (`aria-label`, `role`, `data-testid`).
 
-### Relational BFS Spider Crawling
+### The Antigravity Emulation Workflow
+During this MVP development, we actively emulated the Gemini API functionality using the **Antigravity agent**. This allowed us to strictly validate our DOM string stripping capabilities and thoroughly test the relational BFS architecture without incrementally exhausting real VLM API quotas.
+
+The pipeline works as follows:
+1. **Data Extraction**: Using `extract.ts`, Playwright renders the page and takes a screenshot, while Cheerio aggressively prunes the DOM. This results in a heavily token-optimized HTML file saved to the `temp/` directory.
+2. **The Handoff (Agent as API)**: Instead of an HTTP request to an API, the pruned HTML content and screenshots are provided directly to the Antigravity agent in the chat interface.
+3. **VLM Processing**: The agent analyzes the DOM, finds interactive nodes, infers intents, and synthesizes unique `target_state_hash` values to build the Breadth-First-Search (BFS) relational connections.
+4. **JSON Generation & Saving State**: The agent generates structured JSON maps strictly adhering to the schema, which are then saved directly into the `test-maps/` directory to natively mimic the automated spider's output. 
+
+## Relational BFS Spider Crawling
 The mapping engine utilizes an intrinsic **Breadth-First-Search (BFS)** autonomous crawler to thoroughly traverse target domains natively:
-1. It reads the current localized visual DOM view and hashes it to instantly prevent infinite loop recursion traps.
+1. It reads the current localized visual DOM view and hashes it (`crypto.createHash('md5')`) to instantly prevent infinite loop recursion traps.
 2. It generates a single mapping array file containing localized interaction targets (e.g., `adjust_brightness`, `navigate_portfolio`) capturing highly granular `available_options` and `interaction_steps`.
 3. If a targeted interaction navigates to a localized modal or entirely distinct view, it computes a `target_state_hash` pointer onto that element and exhaustively queues the targeted view for rendering.
 4. Downstream agents simply pivot around a localized layout pointer, isolating loaded JSON nodes to drastically slash Required Context Limit constraints!
+
+## JSON Map Schema
+To maintain a robust relational graph, the system relies on strict JSON schemas. 
+
+### The AI VLM Payload
+When evaluating a DOM state, the Vision-Language Model must strictly return an array of elements following this schema:
+```json
+[
+  {
+    "intent": "string (e.g., 'enter_email', 'navigate_home')",
+    "selector": "string (the most robust CSS/XPath selector possible)",
+    "action_type": "string ('type', 'click', 'select', 'drag')",
+    "semantic_label": "string (the human-readable text or icon meaning)",
+    "is_navigation": "boolean (true ONLY if interacting navigates to a different view)",
+    "available_options": ["array of strings (ONLY IF element is a <select> dropdown, etc.)"],
+    "interaction_steps": "string (Explain exact DOM manipulation required)",
+    "target_state_hash": "string (optional - added by the spider if this navigates somewhere new)"
+  }
+]
+```
+
+### The State Wrapper
+The spider wraps the AI's payload into an isolated container that represents the page state:
+```json
+{
+    "state_hash": "string (The MD5 hash of the pruned HTML, or a semantic hash in test-maps)",
+    "depth": "number (How many clicks deep from the root)",
+    "url": "string (The browser URL)",
+    "elements": [ ... The AI VLM Payload array ... ]
+}
+```
 
 ## Setup & Installation
 
@@ -33,37 +74,38 @@ npx playwright install chromium
 npm run build
 ```
 
-## Environment Configuration
-You must strictly configure your VLM authentication to operate the semantic API. Create a `.env` file in the root directory:
+## Usage: Emulation Workflow (Current Best Practice)
+To run the emulation pipeline locally and generate pruned files for the Antigravity agent:
+```bash
+npx tsx extract.ts
 ```
-GEMINI_API_KEY=your-google-gemini-api-key-here
-```
+This script visits the target URLs, prunes their DOMs, and outputs `-pruned.html` and `-screenshot.png` files into the `temp/` folder. You can then provide these files to the agent to generate new schemas.
 
-## Usage
-Boot up the express web pipeline:
+### 🤖 Antigravity Execution Instructions: Emulation Pipeline
+If you are the Antigravity agent and the user asks you to "execute the emulation pipeline" for a given `<website_url>` and `<website_name>`, follow these exact steps:
+1. **Modify the Extraction Script**: Use your code editing tools to update `extract.ts` (adding `await extract('<website_url>', '<website_name>');` to the `main()` function) or create a temporary extraction script.
+2. **Run Extraction**: Use the `run_command` tool to execute `npx tsx extract.ts`. Wait for it to output the `-pruned.html` and `-screenshot.png` files to the `temp/` directory.
+3. **Read the DOM**: Use the `view_file` tool to read the generated `temp/<website_name>-pruned.html`.
+4. **Act as the VLM**: Analyze the pruned HTML exactly as instructed in `VLM_SYSTEM_PROMPT` (inside `src/vlm.ts`). Identify interactive elements, infer intents, determine resilient selectors, and decide if they trigger navigation (`is_navigation`).
+5. **Synthesize the JSON Map**: Generate the JSON array strictly adhering to the "AI VLM Payload" schema defined above. Wrap it in the "State Wrapper" schema, generating a semantic hash like `root_<website_name>123`.
+6. **Save to Test Maps**: Use the `write_to_file` tool to save this structured JSON into `test-maps/<website_name>/root_<website_name>123.json`.
+7. **Iterate (Optional)**: If the user requests depth > 0, identify elements with `is_navigation: true`, generate semantic hashes for their target states (using `target_state_hash`), and repeat the process by simulating clicks to grab and map the subsequent states.
+
+## Usage: Automated Pipeline
+If you wish to use the fully automated pipeline (requires API key):
+1. Create a `.env` file and set `GEMINI_API_KEY=your-key`.
+2. Boot up the express web pipeline:
 ```bash
 npm start
-# or 
+# or
 node dist/server.js
 ```
-
-Once running, generate a completely exhausted relational state-mapping directory architecture dynamically via standard HTTP routing (`depth` param restricts crawling limits):
+3. Generate a completely exhausted relational state-mapping directory architecture dynamically via standard HTTP routing (`depth` param restricts crawling limits):
 ```bash
 curl "http://localhost:3000/api/v1/map?url=https://makayoga.space/&depth=2"
 ```
 
 ## Agentic Testing & Output Maps
-Included natively in the repository are the local `test-maps/` directories hosting completely mapped topologies of demonstrative Web interfaces. 
+Included natively in the repository are the local `test-maps/` directories hosting completely mapped topologies of demonstrative Web interfaces (e.g., Makayoga, Portfolio, Mozilla Forms).
 
-These directories structurally represent exactly how the linked graph network natively executes (`root.json` cleanly pointing execution toward local `child_hash.json` modular state buffers).
-
-### ⚠️ Note on Existing JSON Maps Generation (Antigravity Emulation)
-
-**Crucially, the present JSON maps inside the `test-maps/` directory were NOT generated by programmatically calling the Gemini API.** 
-
-During this initial MVP development, we actively emulated the Gemini API functionality using the **Antigravity agent**. The agent manually received the pruned DOM structures and simulated the expected Vision-Language Model evaluation to produce the resulting JSON map schemas. 
-
-This emulation approach allowed us to:
-1. Rapidly test the core relational BFS architecture.
-2. Strictly validate our DOM string stripping capabilities (via standalone scripts like `extract.ts`).
-3. Provide essential context on how to structure the output Maps without incrementally exhausting real VLM API quotas!
+**Note on File Names**: You will notice files named like `schedule_hash111.json`. During the manual emulation phase, these names were chosen manually using semantic, human-readable prefixes and fake hashes (like `111`) to make debugging and graph-visualization easier for humans. In a fully programmatic run, the spider generates raw MD5 hashes (e.g., `c46751c0...json`) to ensure deterministic state deduplication.
