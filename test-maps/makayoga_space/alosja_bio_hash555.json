@@ -1,0 +1,24 @@
+{
+  "state_hash": "alosja_bio_hash555",
+  "depth": 2,
+  "url": "https://makayoga.space/#alosja",
+  "elements": [
+    {
+      "intent": "contact_alosja_whatsapp",
+      "selector": "a[href*='Alosja']",
+      "action_type": "click",
+      "semantic_label": "Instructor Contact Interface",
+      "is_navigation": false,
+      "interaction_steps": "Launch WA schema."
+    },
+    {
+      "intent": "navigate_back",
+      "selector": "button:has-text('Volver')",
+      "action_type": "click",
+      "semantic_label": "Back to Team Page",
+      "is_navigation": true,
+      "interaction_steps": "Revert frame container backwards to team list scope natively.",
+      "target_state_hash": "team_hash789"
+    }
+  ]
+}

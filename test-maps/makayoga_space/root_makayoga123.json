@@ -1,0 +1,70 @@
+{
+  "state_hash": "root_makayoga123",
+  "depth": 0,
+  "url": "https://makayoga.space/",
+  "elements": [
+    {
+      "intent": "toggle_language",
+      "selector": "button#lang-toggle-desktop",
+      "action_type": "click",
+      "semantic_label": "Switch Language to EN",
+      "is_navigation": false,
+      "available_options": ["ES", "EN"],
+      "interaction_steps": "Click to instantly trigger the internal string locale shift."
+    },
+    {
+      "intent": "navigate_vision",
+      "selector": "button:has-text('Visión')",
+      "action_type": "click",
+      "semantic_label": "Visión Level 1 Link",
+      "is_navigation": true,
+      "interaction_steps": "Clicking activates the vision view layout.",
+      "target_state_hash": "vision_hash456"
+    },
+    {
+      "intent": "navigate_team",
+      "selector": "button:has-text('Nosotras')",
+      "action_type": "click",
+      "semantic_label": "Level 1 Nav Link: Team",
+      "is_navigation": true,
+      "interaction_steps": "Click to expand team list structure.",
+      "target_state_hash": "team_hash789"
+    },
+    {
+      "intent": "navigate_schedule",
+      "selector": "button:has-text('Horarios')",
+      "action_type": "click",
+      "semantic_label": "Level 1 Nav Link: Schedule",
+      "is_navigation": true,
+      "interaction_steps": "Click to expand class tables.",
+      "target_state_hash": "schedule_hash111"
+    },
+    {
+      "intent": "navigate_space",
+      "selector": "button:has-text('Espacio')",
+      "action_type": "click",
+      "semantic_label": "Level 1 Nav Link: Studio Image Carousel",
+      "is_navigation": true,
+      "interaction_steps": "Target local space images wrapper layer.",
+      "target_state_hash": "space_hash222"
+    },
+    {
+      "intent": "navigate_testimonials",
+      "selector": "button:has-text('Testimonios')",
+      "action_type": "click",
+      "semantic_label": "Level 1 Nav Link: Testimonials Video Feed",
+      "is_navigation": true,
+      "interaction_steps": "Trigger scroll into community reviews.",
+      "target_state_hash": "testimonials_hash333"
+    },
+    {
+      "intent": "navigate_contact",
+      "selector": "button:has-text('Contacto')",
+      "action_type": "click",
+      "semantic_label": "Level 1 Nav Link: Contact Methods",
+      "is_navigation": true,
+      "interaction_steps": "Trigger load for maps embeds.",
+      "target_state_hash": "contact_hash444"
+    }
+  ]
+}

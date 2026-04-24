@@ -28,28 +28,32 @@ npm install
 
 # Install Playwright browser dependencies
 npx playwright install chromium
-```
-2. Configure your Vision-Language Model interface:
-Create a `.env` and add your API access key. Currently, the mapper leverages Anthropic natively for peak mapping intelligence without images.
-```env
-ANTHROPIC_API_KEY="your-anthropic-key-here"
+
+# Compile Typescript Engine Source
+npm run build
 ```
 
-### 2. Live Agent Crawling & State Verification
+## Environment Configuration
+You must strictly configure your VLM authentication to operate the semantic API. Create a `.env` file in the root directory:
+```
+GEMINI_API_KEY=your-google-gemini-api-key-here
+```
 
-To dynamically spawn a test map using genuine VLM inference:
+## Usage
+Boot up the express web pipeline:
 ```bash
-npx ts-node generate-maps.ts https://makayoga.space/
+npm start
+# or 
+node dist/server.js
 ```
-*Note: Our pipeline uses strict Node pruning heuristics paired directly with Claude 3.5/4.6 Sonnet (text-only) APIs, skipping heavy Vision dependencies completely to resolve models in seconds!*
 
-## Development Background (Mock Emulations vs API Executions)
-The foundational JSON relationships inside the `test-maps/` repository were organically formulated through "Agentic Emulation" (Antigravity system mocking expected outputs instantly) prior to the completion of the explicit Anthropic pipeline integration to rapidly blueprint the storage architecture. 
+Once running, generate a completely exhausted relational state-mapping directory architecture dynamically via standard HTTP routing (`depth` param restricts crawling limits):
+```bash
+curl "http://localhost:3000/api/v1/map?url=https://makayoga.space/&depth=2"
+```
 
-During the Anthropic transition, the codebase was heavily optimized via the `pruner.ts` pipeline to surgically strip out standard CSS and isolate accessibility text constraints (yielding >80% speedups by dumping Playwright screenshots).
-
-## Output Schema
-Each generated JSON corresponds to an isolated interactive State. The Engine maps strictly these components to avoid brittle DOM selector failures: of demonstrative Web interfaces. 
+## Agentic Testing & Output Maps
+Included natively in the repository are the local `test-maps/` directories hosting completely mapped topologies of demonstrative Web interfaces. 
 
 These directories structurally represent exactly how the linked graph network natively executes (`root.json` cleanly pointing execution toward local `child_hash.json` modular state buffers).
 

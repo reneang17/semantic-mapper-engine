@@ -1,0 +1,52 @@
+{
+  "state_hash": "team_hash789",
+  "depth": 1,
+  "url": "https://makayoga.space/#nosotras",
+  "elements": [
+    {
+      "intent": "view_alosja_biography",
+      "selector": "button:has-text('Alosja')",
+      "action_type": "click",
+      "semantic_label": "View Instructor: Alosja",
+      "is_navigation": true,
+      "interaction_steps": "Click to transition to detailed bio layer.",
+      "target_state_hash": "alosja_bio_hash555"
+    },
+    {
+      "intent": "view_maria_biography",
+      "selector": "button:has-text('Maria')",
+      "action_type": "click",
+      "semantic_label": "View Instructor: Maria",
+      "is_navigation": true,
+      "interaction_steps": "Click to transition to detailed bio layer.",
+      "target_state_hash": "maria_bio_hash666"
+    },
+    {
+      "intent": "view_karina_biography",
+      "selector": "button:has-text('Karina')",
+      "action_type": "click",
+      "semantic_label": "View Instructor: Karina",
+      "is_navigation": true,
+      "interaction_steps": "Click to transition to detailed bio layer.",
+      "target_state_hash": "karina_bio_hash777"
+    },
+    {
+      "intent": "view_phan_biography",
+      "selector": "button:has-text('Phan')",
+      "action_type": "click",
+      "semantic_label": "View Instructor: Phan",
+      "is_navigation": true,
+      "interaction_steps": "Click to transition to detailed bio layer.",
+      "target_state_hash": "phan_bio_hash888"
+    },
+    {
+      "intent": "navigate_home",
+      "selector": "button:has-text('Volver al inicio')",
+      "action_type": "click",
+      "semantic_label": "Back to Home",
+      "is_navigation": true,
+      "interaction_steps": "Return to Landing View.",
+      "target_state_hash": "root_makayoga123"
+    }
+  ]
+}
