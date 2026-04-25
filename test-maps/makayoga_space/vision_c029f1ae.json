@@ -1,0 +1,24 @@
+{
+  "state_hash": "c029f1aeac459734e20d0b8c11aebb58",
+  "semantic_name": "vision",
+  "depth": 1,
+  "url": "https://makayoga.space/#vision",
+  "elements": [
+    {
+      "intent": "volver_inicio",
+      "selector": "#page-vision button:nth-of-type(1)",
+      "action_type": "click",
+      "semantic_label": "Volver al inicio",
+      "is_navigation": false,
+      "interaction_steps": "Click to return"
+    },
+    {
+      "intent": "unete",
+      "selector": "#page-vision button:nth-of-type(2)",
+      "action_type": "click",
+      "semantic_label": "Únete a nosotros",
+      "is_navigation": false,
+      "interaction_steps": "Click to join"
+    }
+  ]
+}

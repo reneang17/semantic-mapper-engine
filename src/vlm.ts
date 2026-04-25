@@ -1,5 +1,6 @@
 import { GoogleGenAI } from '@google/genai';
 import * as fs from 'fs';
+import * as path from 'path';
 
 const VLM_SYSTEM_PROMPT = `
 You are an expert web accessibility and automation engineer. You are provided with a screenshot of a webpage and its heavily pruned HTML DOM. 
@@ -23,6 +24,37 @@ Return ONLY a valid JSON array with this exact schema for each interactive eleme
 `;
 
 export async function generateSemanticMap(prunedHtml: string, screenshotPath: string): Promise<any> {
+  if (!process.env.GEMINI_API_KEY) {
+    console.log(`\n[VLM Emulation] API Key missing. Falling back to Antigravity Emulation...`);
+    const tempDir = path.join(process.cwd(), 'temp');
+    const reqPath = path.join(tempDir, 'emulation-request.html');
+    const resPath = path.join(tempDir, 'emulation-response.json');
+    
+    // Save the request payload for the agent to read
+    fs.writeFileSync(reqPath, prunedHtml);
+    console.log(`[VLM Emulation] Wrote pruned HTML to ${reqPath}`);
+    console.log(`[VLM Emulation] WAITING for agent to write JSON array to ${resPath}...`);
+    
+    // Watch for the response file
+    while (!fs.existsSync(resPath)) {
+      await new Promise(resolve => setTimeout(resolve, 2000));
+    }
+    
+    console.log(`[VLM Emulation] Found ${resPath}! Ingesting and continuing Spider...`);
+    const responseText = fs.readFileSync(resPath, 'utf-8');
+    
+    // Clean up emulation files
+    fs.unlinkSync(reqPath);
+    fs.unlinkSync(resPath);
+    
+    try {
+      return JSON.parse(responseText);
+    } catch (error) {
+      console.error('[VLM Emulation] Error parsing JSON output from agent:', responseText);
+      throw new Error('Failed to parse VLM response as JSON array');
+    }
+  }
+
   const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
   
   // Read screenshot and convert to base64 inline data
@@ -60,7 +92,7 @@ export async function generateSemanticMap(prunedHtml: string, screenshotPath: st
     if (jsonMatch) {
       return JSON.parse(jsonMatch[0]);
     }
-    return JSON.parse(responseText);
+      return JSON.parse(responseText);
   } catch (error) {
     console.error('[VLM] Error parsing JSON output from Gemini:', responseText);
     throw new Error('Failed to parse VLM response as JSON array');

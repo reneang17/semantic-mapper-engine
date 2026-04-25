@@ -1,0 +1,62 @@
+{
+  "state_hash": "9e90831c43c58738e6aec0b8c327bdfb",
+  "semantic_name": "root",
+  "depth": 0,
+  "url": "https://makayoga.space/",
+  "elements": [
+    {
+      "intent": "navigate_vision",
+      "selector": "nav .hidden.md\\:flex button:nth-of-type(1)",
+      "action_type": "click",
+      "semantic_label": "Visión Navigation",
+      "is_navigation": true,
+      "interaction_steps": "Click to navigate to the Vision section",
+      "target_state_hash": "c029f1aeac459734e20d0b8c11aebb58"
+    },
+    {
+      "intent": "navigate_nosotras",
+      "selector": "nav .hidden.md\\:flex button:nth-of-type(2)",
+      "action_type": "click",
+      "semantic_label": "Nosotras Navigation",
+      "is_navigation": true,
+      "interaction_steps": "Click to navigate to the Team section",
+      "target_state_hash": "771af232df192a3215eba60545ac1f8a"
+    },
+    {
+      "intent": "navigate_horarios",
+      "selector": "nav .hidden.md\\:flex button:nth-of-type(3)",
+      "action_type": "click",
+      "semantic_label": "Horarios Navigation",
+      "is_navigation": true,
+      "interaction_steps": "Click to navigate to the Schedule section",
+      "target_state_hash": "b0aa3be3b5d3bf2180a335dd8bf1bf96"
+    },
+    {
+      "intent": "navigate_espacio",
+      "selector": "nav .hidden.md\\:flex button:nth-of-type(4)",
+      "action_type": "click",
+      "semantic_label": "Espacio Navigation",
+      "is_navigation": true,
+      "interaction_steps": "Click to navigate to the Space section",
+      "target_state_hash": "24e33bd2a8870847f505b5159e81a772"
+    },
+    {
+      "intent": "navigate_testimonios",
+      "selector": "nav .hidden.md\\:flex button:nth-of-type(5)",
+      "action_type": "click",
+      "semantic_label": "Testimonios Navigation",
+      "is_navigation": true,
+      "interaction_steps": "Click to navigate to the Testimonials section",
+      "target_state_hash": "bd8f1fe9132b494e55c289be2b27575f"
+    },
+    {
+      "intent": "navigate_contacto",
+      "selector": "nav .hidden.md\\:flex button:nth-of-type(6)",
+      "action_type": "click",
+      "semantic_label": "Contacto Navigation",
+      "is_navigation": true,
+      "interaction_steps": "Click to navigate to the Contact section",
+      "target_state_hash": "0740fb02d015466c5bb1fdc0389b1bb9"
+    }
+  ]
+}

@@ -17,7 +17,7 @@ export async function scrapeAndSave(url: string): Promise<{ html: string; screen
   const page = await context.newPage();
 
   console.log(`[Scraper] Navigating to ${url}...`);
-  await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
+  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
 
   const screenshotName = `screenshot-${Date.now()}.png`;
   const screenshotPath = path.join(tempDir, screenshotName);

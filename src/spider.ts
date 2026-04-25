@@ -95,18 +95,24 @@ export async function spiderCrawl(baseUrl: string, maxDepth = 2): Promise<any> {
             
             let elementsMap: any[] = [];
             try {
-                if (!process.env.GEMINI_API_KEY) {
-                    console.warn('[Spider] GEMINI_API_KEY missing - generating empty generic structural map');
-                } else {
                     elementsMap = await generateSemanticMap(prunedHtml, screenshotPath);
-                }
             } catch(e) {
                 console.error('[Spider] VLM mapping error:', e);
+            }
+
+            let semanticName = "root";
+            if (current.parentSource) {
+                const parentState = statesMap.get(current.parentSource.stateHash);
+                if (parentState) {
+                    const intentStr = parentState.elements[current.parentSource.elementIndex].intent || '';
+                    semanticName = intentStr.replace('navigate_', '').replace(/[^a-zA-Z0-9]/g, '_');
+                }
             }
 
             // Push isolated state container locally
             const stateData = {
                 state_hash: hash,
+                semantic_name: semanticName,
                 depth: current.depth,
                 url: page.url(),
                 elements: elementsMap

@@ -1,0 +1,41 @@
+{
+  "state_hash": "b0aa3be3b5d3bf2180a335dd8bf1bf96",
+  "semantic_name": "horarios",
+  "depth": 1,
+  "url": "https://makayoga.space/#schedule",
+  "elements": [
+    {
+      "intent": "volver_inicio",
+      "selector": "#page-schedule button:nth-of-type(1)",
+      "action_type": "click",
+      "semantic_label": "Volver al inicio",
+      "is_navigation": false,
+      "interaction_steps": "Click to return"
+    },
+    {
+      "intent": "wa_general",
+      "selector": "#page-schedule a.bg-green-600:nth-of-type(1)",
+      "action_type": "click",
+      "semantic_label": "WhatsApp General",
+      "is_navigation": false,
+      "interaction_steps": "Click to message WA"
+    },
+    {
+      "intent": "wa_phan",
+      "selector": "#page-schedule a.bg-green-600:nth-of-type(2)",
+      "action_type": "click",
+      "semantic_label": "WhatsApp Phan",
+      "is_navigation": false,
+      "interaction_steps": "Click to message WA Phan"
+    },
+    {
+      "intent": "view_schedule_slot",
+      "selector": "#page-schedule td.cursor-pointer:nth-of-type(1)",
+      "action_type": "click",
+      "semantic_label": "Schedule Slot",
+      "is_navigation": true,
+      "interaction_steps": "Click to view slot",
+      "error": "Selector Unreachable"
+    }
+  ]
+}

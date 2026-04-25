@@ -1,0 +1,33 @@
+{
+  "state_hash": "24e33bd2a8870847f505b5159e81a772",
+  "semantic_name": "espacio",
+  "depth": 1,
+  "url": "https://makayoga.space/#space",
+  "elements": [
+    {
+      "intent": "volver_inicio",
+      "selector": "#page-space button:nth-of-type(1)",
+      "action_type": "click",
+      "semantic_label": "Volver al inicio",
+      "is_navigation": false,
+      "interaction_steps": "Click to return"
+    },
+    {
+      "intent": "reserva",
+      "selector": "#page-space button:nth-of-type(2)",
+      "action_type": "click",
+      "semantic_label": "Reserva tu clase",
+      "is_navigation": false,
+      "interaction_steps": "Click to reserve"
+    },
+    {
+      "intent": "view_gallery_image",
+      "selector": "#page-space div.cursor-pointer:nth-of-type(1)",
+      "action_type": "click",
+      "semantic_label": "Gallery Image",
+      "is_navigation": true,
+      "interaction_steps": "Click to view image",
+      "target_state_hash": "8961935f59a70386cd99f1a5604f3704"
+    }
+  ]
+}

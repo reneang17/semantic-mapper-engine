@@ -74,22 +74,31 @@ npx playwright install chromium
 npm run build
 ```
 
-## Usage: Emulation Workflow (Current Best Practice)
-To run the emulation pipeline locally and generate pruned files for the Antigravity agent:
+## Usage: Manual Emulation Workflow
+To manually run the emulation pipeline to extract single root pages for the Antigravity agent:
 ```bash
 npx tsx extract.ts
 ```
-This script visits the target URLs, prunes their DOMs, and outputs `-pruned.html` and `-screenshot.png` files into the `temp/` folder. You can then provide these files to the agent to generate new schemas.
+This script visits target URLs, prunes their DOMs, and outputs `-pruned.html` files into the `temp/` folder. The agent can read these to generate new schemas.
 
-### 🤖 Antigravity Execution Instructions: Emulation Pipeline
-If you are the Antigravity agent and the user asks you to "execute the emulation pipeline" for a given `<website_url>` and `<website_name>`, follow these exact steps:
-1. **Modify the Extraction Script**: Use your code editing tools to update `extract.ts` (adding `await extract('<website_url>', '<website_name>');` to the `main()` function) or create a temporary extraction script.
-2. **Run Extraction**: Use the `run_command` tool to execute `npx tsx extract.ts`. Wait for it to output the `-pruned.html` and `-screenshot.png` files to the `temp/` directory.
-3. **Read the DOM**: Use the `view_file` tool to read the generated `temp/<website_name>-pruned.html`.
-4. **Act as the VLM**: Analyze the pruned HTML exactly as instructed in `VLM_SYSTEM_PROMPT` (inside `src/vlm.ts`). Identify interactive elements, infer intents, determine resilient selectors, and decide if they trigger navigation (`is_navigation`).
-5. **Synthesize the JSON Map**: Generate the JSON array strictly adhering to the "AI VLM Payload" schema defined above. Wrap it in the "State Wrapper" schema, generating a semantic hash like `root_<website_name>123`.
-6. **Save to Test Maps**: Use the `write_to_file` tool to save this structured JSON into `test-maps/<website_name>/root_<website_name>123.json`.
-7. **Iterate (Optional)**: If the user requests depth > 0, identify elements with `is_navigation: true`, generate semantic hashes for their target states (using `target_state_hash`), and repeat the process by simulating clicks to grab and map the subsequent states.
+## Usage: Hybrid Spider Emulation (Current Best Practice)
+This hybrid pipeline runs the automated BFS Spider but pauses the crawl so the Antigravity agent can emulate the VLM API endpoint.
+1. Ensure `GEMINI_API_KEY` is not set in `.env`.
+2. Start the local server: `npm start`
+3. Trigger the crawl for your target depth (e.g., `depth=2`):
+```bash
+curl "http://localhost:3000/api/v1/map?url=https://makayoga.space/&depth=2"
+```
+
+### 🤖 Antigravity Execution Instructions: Hybrid Spider Pipeline
+If you are the Antigravity agent and the user asks you to "execute the hybrid spider pipeline" for a target URL, follow these exact steps:
+1. **Trigger Crawl**: Use `run_command` to hit the local express server endpoint as shown above. The Spider will navigate, hash the DOM, and pause.
+2. **Watch the Request**: Use the `command_status` tool to observe the server. Wait until the Spider writes the pruned HTML to `temp/emulation-request.html` and pauses.
+3. **Read the DOM**: Use the `view_file` tool to read `temp/emulation-request.html`.
+4. **Act as the VLM**: Analyze the HTML as instructed in `src/vlm.ts`. Identify interactive elements and infer intents.
+5. **Synthesize the JSON Payload**: Generate the JSON array strictly adhering to the "AI VLM Payload" schema. (Do NOT wrap it in the State Wrapper; the Spider handles that).
+6. **Save the Response**: Use `write_to_file` to save the JSON array to `temp/emulation-response.json`.
+7. **Iterate Automatically**: The Spider will detect the response, ingest it, automatically use Playwright to click the nodes (`is_navigation: true`), traverse the graph, and pause again for your next input. Repeat steps 2-6 until the BFS crawl finishes!
 
 ## Usage: Automated Pipeline
 If you wish to use the fully automated pipeline (requires API key):

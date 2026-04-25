@@ -1,0 +1,24 @@
+{
+  "state_hash": "bd8f1fe9132b494e55c289be2b27575f",
+  "semantic_name": "testimonios",
+  "depth": 1,
+  "url": "https://makayoga.space/#testimonios",
+  "elements": [
+    {
+      "intent": "volver_inicio",
+      "selector": "#page-testimonios button:nth-of-type(1)",
+      "action_type": "click",
+      "semantic_label": "Volver al inicio",
+      "is_navigation": false,
+      "interaction_steps": "Click to return"
+    },
+    {
+      "intent": "google_reviews",
+      "selector": "#page-testimonios a",
+      "action_type": "click",
+      "semantic_label": "Google Reviews",
+      "is_navigation": false,
+      "interaction_steps": "Click to view reviews"
+    }
+  ]
+}

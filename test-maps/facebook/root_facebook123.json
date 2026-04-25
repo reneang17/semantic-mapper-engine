@@ -1,0 +1,63 @@
+{
+  "state_hash": "root_facebook123",
+  "depth": 0,
+  "url": "https://www.facebook.com/",
+  "elements": [
+    {
+      "intent": "enter_email",
+      "selector": "input[name='email']",
+      "action_type": "type",
+      "semantic_label": "Email or Phone Number Input",
+      "is_navigation": false,
+      "interaction_steps": "Click input box and type email or phone number"
+    },
+    {
+      "intent": "enter_password",
+      "selector": "input[name='pass']",
+      "action_type": "type",
+      "semantic_label": "Password Input",
+      "is_navigation": false,
+      "interaction_steps": "Click input box and type password"
+    },
+    {
+      "intent": "submit_login",
+      "selector": "form#login_form button[name='login'], form#login_form",
+      "action_type": "click",
+      "semantic_label": "Log In Button / Submit",
+      "is_navigation": true,
+      "interaction_steps": "Click the login button or press Enter to submit credentials"
+    },
+    {
+      "intent": "recover_password",
+      "selector": "a[href*='/recover/initiate/']",
+      "action_type": "click",
+      "semantic_label": "Forgot Password",
+      "is_navigation": true,
+      "interaction_steps": "Click to navigate to password recovery"
+    },
+    {
+      "intent": "create_new_account",
+      "selector": "a[aria-label='Crear cuenta nueva'], a[href*='/reg/']",
+      "action_type": "click",
+      "semantic_label": "Create New Account",
+      "is_navigation": true,
+      "interaction_steps": "Click to open registration form/modal"
+    },
+    {
+      "intent": "change_language",
+      "selector": "a:contains('English (US)'), a:contains('Português (Brasil)'), a:contains('Français')",
+      "action_type": "click",
+      "semantic_label": "Language Selection Links",
+      "is_navigation": true,
+      "interaction_steps": "Click to switch interface language"
+    },
+    {
+      "intent": "navigate_footer_link",
+      "selector": "a[href*='messenger.com'], a[href*='instagram.com'], a[href*='/help/']",
+      "action_type": "click",
+      "semantic_label": "Footer Navigation (Messenger, Instagram, Help, etc.)",
+      "is_navigation": true,
+      "interaction_steps": "Click to navigate to corresponding Meta service or info page"
+    }
+  ]
+}

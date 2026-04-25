@@ -39,7 +39,9 @@ app.get('/api/v1/map', async (req, res) => {
     // Dump every individual state node autonomously into localized files
     for (const [hash, stateData] of Object.entries(states)) {
         const isRoot = hash === root_hash;
-        const filename = isRoot ? `root_${hash}.json` : `${hash}.json`;
+        const shortHash = hash.substring(0, 8);
+        const prefix = stateData.semantic_name ? stateData.semantic_name : 'state';
+        const filename = isRoot ? `root_${shortHash}.json` : `${prefix}_${shortHash}.json`;
         fs.writeFileSync(path.join(mapDir, filename), JSON.stringify(stateData, null, 2));
     }
 

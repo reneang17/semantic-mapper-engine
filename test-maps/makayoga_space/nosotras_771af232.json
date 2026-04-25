@@ -1,0 +1,52 @@
+{
+  "state_hash": "771af232df192a3215eba60545ac1f8a",
+  "semantic_name": "nosotras",
+  "depth": 1,
+  "url": "https://makayoga.space/#team",
+  "elements": [
+    {
+      "intent": "volver_inicio",
+      "selector": "#page-team button:nth-of-type(1)",
+      "action_type": "click",
+      "semantic_label": "Volver al inicio",
+      "is_navigation": false,
+      "interaction_steps": "Click to return"
+    },
+    {
+      "intent": "view_alosja",
+      "selector": "#instructors-container div.cursor-pointer:nth-of-type(1)",
+      "action_type": "click",
+      "semantic_label": "Alosja Profile",
+      "is_navigation": true,
+      "interaction_steps": "Click to view Alosja",
+      "target_state_hash": "78de748a695971590c1a8230304e5826"
+    },
+    {
+      "intent": "view_maria",
+      "selector": "#instructors-container div.cursor-pointer:nth-of-type(2)",
+      "action_type": "click",
+      "semantic_label": "Maria Profile",
+      "is_navigation": true,
+      "interaction_steps": "Click to view Maria",
+      "target_state_hash": "78de748a695971590c1a8230304e5826"
+    },
+    {
+      "intent": "view_karina",
+      "selector": "#instructors-container div.cursor-pointer:nth-of-type(3)",
+      "action_type": "click",
+      "semantic_label": "Karina Profile",
+      "is_navigation": true,
+      "interaction_steps": "Click to view Karina",
+      "target_state_hash": "e20d41f9b0b0ae6605c904535de325a6"
+    },
+    {
+      "intent": "view_phan",
+      "selector": "#instructors-container div.cursor-pointer:nth-of-type(4)",
+      "action_type": "click",
+      "semantic_label": "Phan Profile",
+      "is_navigation": true,
+      "interaction_steps": "Click to view Phan",
+      "target_state_hash": "e3e948717cafae2a01079e952b9bc340"
+    }
+  ]
+}

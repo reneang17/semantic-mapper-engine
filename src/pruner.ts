@@ -35,7 +35,7 @@ export function pruneHtml(html: string): string {
 
   // 4. Prune the DOM tree: Remove any tag that isn't interactive, isn't an immediate parent, isn't a form/nav,
   // AND doesn't have interactive children. This strictly isolates interactives inside their valid context.
-  const interactives = 'button, a, input, select, textarea';
+  const interactives = 'button, a, input, select, textarea, [onclick], [role="button"], .cursor-pointer, .hover\\:-translate-y-1';
   
   let changed = true;
   while(changed) {
